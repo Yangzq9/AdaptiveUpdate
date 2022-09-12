@@ -1,4 +1,4 @@
-# AdaptiveUpdate
+# AdaptiveUpdate \n
 Environment used:
 python 3.6
 gym==0.10.5
