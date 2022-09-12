@@ -96,11 +96,11 @@ def train(arglist):
         adj = env.action_space.high
 
         # random seed set according to exp_name
-        np.random.seed(seed)
-        tf.set_random_seed(seed)
-        os.environ['PYTHONHASHSEED'] = str(seed)
-        random.seed(seed)
-        env.seed(seed)
+        np.random.seed(seed+10000)
+        tf.set_random_seed(seed+10000)
+        os.environ['PYTHONHASHSEED'] = str(seed+10000)
+        random.seed(seed+10000)
+        env.seed(seed+10000)
 
         trainer = get_trainer(env, obs_shape, arglist)
 
@@ -114,7 +114,9 @@ def train(arglist):
         # Load previous results, if necessary
         arglist.load_dir = arglist.save_dir + arglist.exp_name + '/'
         if arglist.restore:
-            arglist.exp_name = 'test_cover'
+            arglist.exp_name = arglist.exp_name.split('_')
+            arglist.exp_name[0] = 'test'
+            arglist.exp_name = '_'.join(arglist.exp_name)
         arglist.save_dir = arglist.save_dir + arglist.exp_name + '/'
         if arglist.restore:
             print('Loading previous state...')
