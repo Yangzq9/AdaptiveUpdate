@@ -25,7 +25,8 @@ env_config = [['InvertedPendulumBulletEnv-v0', 100, 500], ['InvertedDoublePendul
               ['InvertedPendulumSwingupBulletEnv-v0', 100, 500], ['HopperBulletEnv-v0', 100, 500],
               ['Walker2DBulletEnv-v0', 100, 500], ['AntBulletEnv-v0', 100, 500]]
 al_config = [['cosi', 1.0, 0.3, 1, ''], ['poly', 1.0, 0.3, 1, ''], ['expo', 1.0, 0.3, 1, ''],
-             ['cosi', 1.0, 0.01, 1, ''], ['poly', 1.0, 0.01, 1, ''], ['expo', 1.0, 0.01, 1, '']]
+             ['cosi', 1.0, 0.01, 1, ''], ['poly', 1.0, 0.01, 1, ''], ['expo', 1.0, 0.01, 1, ''],
+             ['cosi', 0.5, 0.01, 1, ''], ['poly', 0.5, 0.01, 1, ''], ['expo', 0.5, 0.01, 1, '']]
 
 def parse_args():
     parser = argparse.ArgumentParser("Reinforcement Learning experiments for adaptive update method of target network")
