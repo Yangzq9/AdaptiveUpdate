@@ -13,7 +13,6 @@ class OrnsteinUhlenbeckActionNoise:
     def __call__(self):
         x = self.theta * (self.mu - self.x_prev) * self.dt + \
             self.sigma * np.sqrt(self.dt) * np.random.normal(size=self.mu.shape)
-        # 因为我使用OU noise时情况特殊，所以每次使用时都会指定x_prev和mu，且只用一次，所以取消了x_prev的继承机制
         # self.x_prev = x
         return x
 
