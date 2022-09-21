@@ -10,7 +10,7 @@ import pybullet_envs
 
 import ddpg.common.tf_util as U
 from ddpg.trainer.core import DDPGAgentTrainer, make_update
-from OU_noise.OU_noise import OrnsteinUhlenbeckActionNoise
+from ddpg.common.OU_noise import OrnsteinUhlenbeckActionNoise
 from gym import spaces
 tf.disable_v2_behavior()
 
