@@ -1,5 +1,5 @@
 # Adaptive Update Method of Target Network
-Environment used:
+Python environment used:
 
 python 3.6
 
