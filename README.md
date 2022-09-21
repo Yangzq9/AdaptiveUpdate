@@ -1,4 +1,4 @@
-# AdaptiveUpdate
+# Adaptive Update Method of Target Network
 Environment used:
 
 python 3.6
