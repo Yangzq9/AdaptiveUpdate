@@ -21,14 +21,6 @@ with open('seed.txt', 'r+') as f:
     f.truncate()
     f.write(str(seed + 1))
 
-env_config = [['InvertedDoublePendulumBulletEnv-v0', 25000, 500], ['HopperBulletEnv-v0', 25000, 500]]
-al_config = []
-xi_config = []
-for i in range(4):
-    for j in range(4):
-        al_config.append(['', 1.0, 1.0, 1, 'adaptive1'])
-        xi_config.append([1-0.1**(i+1), 1-0.1**(j+1)])
-
 def parse_args():
     parser = argparse.ArgumentParser("Reinforcement Learning experiments for adaptive update method of target network")
     # Environment
@@ -53,6 +45,14 @@ def parse_args():
     parser.add_argument("--display", action="store_true", default=False)
     parser.add_argument("--plots-dir", type=str, default="./Saveofsimple/learning_curves/", help="directory where plot data is saved")
     return parser.parse_args()
+
+env_config = [['InvertedDoublePendulumBulletEnv-v0', 25000, 500], ['HopperBulletEnv-v0', 25000, 500]]
+al_config = []
+xi_config = []
+for i in range(4):
+    for j in range(4):
+        al_config.append(['', 1.0, 1.0, 1, 'adaptive1'])
+        xi_config.append([1-0.1**(i+1), 1-0.1**(j+1)])
 
 def mlp_model(input, num_outputs, scope, reuse=False, num_units=64, rnn_cell=None):
     # This model takes as input an observation and returns values of all actions
